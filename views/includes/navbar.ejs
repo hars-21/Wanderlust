@@ -17,6 +17,36 @@
 		border-radius: 25px;
 		padding: 0.5rem 3rem;
 	}
+
+	@media screen and (max-width: 768px) {
+		.nav-menu {
+			background: #fff;
+			padding: 1rem;
+			z-index: 100;
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top: 5rem;
+			left: 0;
+		}
+		.navbar-nav {
+			flex-direction: column;
+			align-items: center;
+		}
+		.nav-search {
+			flex-direction: column;
+			align-items: center;
+			padding: 1rem;
+		}
+		.nav-search input {
+			text-align: center;
+			margin-bottom: 1rem;
+		}
+		.search-btn {
+			width: 60%;
+			padding: 0.5rem;
+		}
+	}
 </style>
 
 <nav class="navbar navbar-expand-md bg-body-light border-bottom stick-top">
@@ -32,13 +62,13 @@
 		>
 			<span class="navbar-toggler-icon"></span>
 		</button>
-		<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+		<div class="collapse navbar-collapse nav-menu" id="navbarNavAltMarkup">
 			<div class="navbar-nav">
 				<a class="nav-link" href="/listings">Explore</a>
 				<a class="nav-link" href="/listings/new">AirBnb your home</a>
 			</div>
 			<div class="navbar-nav ms-auto">
-				<form class="d-flex" role="search">
+				<form class="d-flex nav-search" role="search">
 					<input
 						class="form-control me-2 search-input"
 						type="search"

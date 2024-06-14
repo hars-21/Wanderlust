@@ -6,15 +6,20 @@
 		align-items: center;
 	}
 
+	#carouselExample {
+		width: 70%;
+	}
+
 	.filter-contain {
 		display: flex;
 		flex-wrap: wrap;
 		align-items: center;
+		padding: 0 2.6rem;
 	}
 
 	.filter {
 		text-align: center;
-		margin-right: 2rem;
+		margin-right: 1.85rem;
 		margin-top: 2rem;
 		opacity: 0.7;
 	}
@@ -40,6 +45,7 @@
 		height: 3rem;
 		display: flex;
 		align-items: center;
+		font-size: 0.9rem;
 	}
 
 	.tax-toggle:hover,
@@ -49,9 +55,13 @@
 		background-color: rgb(240, 240, 240);
 	}
 
+	.slider-btn {
+		width: 5%;
+	}
+
 	.prev,
 	.next {
-		background-color: black;
+		filter: invert(1);
 	}
 </style>
 
@@ -142,7 +152,7 @@
 			</div>
 		</div>
 		<button
-			class="carousel-control-prev"
+			class="carousel-control-prev slider-btn"
 			type="button"
 			data-bs-target="#carouselExample"
 			data-bs-slide="prev"
@@ -151,7 +161,7 @@
 			<span class="visually-hidden">Previous</span>
 		</button>
 		<button
-			class="carousel-control-next"
+			class="carousel-control-next slider-btn"
 			type="button"
 			data-bs-target="#carouselExample"
 			data-bs-slide="next"
