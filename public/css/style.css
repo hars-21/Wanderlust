@@ -7,6 +7,7 @@ body {
 
 .container {
 	flex: 1;
+	margin-top: 5rem;
 }
 
 /* Navbar */
@@ -14,6 +15,11 @@ body {
 .navbar {
 	height: 5rem;
 	background-color: #fff;
+	position: fixed !important;
+	z-index: 1000;
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
 }
 
 .fa-compass {
