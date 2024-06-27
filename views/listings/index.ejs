@@ -6,31 +6,52 @@
 		align-items: center;
 	}
 
-	#carouselExample {
-		width: 70%;
-	}
-
-	.filter-contain {
+	#filter-container {
 		display: flex;
-		flex-wrap: wrap;
-		align-items: center;
-		padding: 0 2.6rem;
+		overflow: auto;
+		width: 60%;
+		margin-top: 1.5rem;
 	}
 
-	.filter {
+	#filter-container::-webkit-scrollbar {
+		display: none;
+	}
+
+	.filter-option {
 		text-align: center;
-		margin-right: 1.85rem;
-		margin-top: 2rem;
+		margin: 0 1rem;
 		opacity: 0.7;
+		border-bottom: 2px solid #fff;
+		white-space: nowrap;
 	}
 
-	.filter:hover {
+	.filter-option:hover {
 		opacity: 1;
 		cursor: pointer;
+		border-color: rgba(0, 0, 0, 0.5);
 	}
 
-	.filter p {
+	.filter-option:active {
+		opacity: 1;
+		cursor: pointer;
+		border-color: black;
+	}
+
+	.filter-option p {
 		font-size: 0.8rem;
+	}
+
+	.slide-btn {
+		background-color: white;
+		border: none;
+	}
+
+	.arrows {
+		font-size: 1.5rem;
+	}
+
+	#btn-contain {
+		display: flex;
 	}
 
 	#tax-info {
@@ -38,155 +59,185 @@
 	}
 
 	.tax-toggle,
-	#filters {
+	#filter-btn {
 		border: 1px solid rgba(0, 0, 0, 0.3);
 		border-radius: 10px;
 		padding: 1rem;
 		height: 3rem;
 		display: flex;
 		align-items: center;
+		justify-content: center;
 		font-size: 0.9rem;
+		margin: 0.5rem 0.25rem;
 	}
 
 	.tax-toggle:hover,
-	#filters:hover {
+	#filter-btn:hover {
 		cursor: pointer;
 		border-color: rgba(0, 0, 0, 1);
 		background-color: rgb(240, 240, 240);
 	}
 
-	.slider-btn {
-		width: 5%;
-	}
-
-	.prev,
-	.next {
-		filter: invert(1);
+	@media screen and (max-width: 768px) {
+		#filter-bar {
+			flex-direction: column;
+			align-items: start;
+		}
+		.tax-toggle,
+		#filter-btn {
+			padding: 0.8rem;
+			height: 2rem;
+			font-size: 0.7rem;
+			margin: 0.3rem;
+		}
+		#filter-container {
+			width: 100%;
+		}
+		.slide-btn {
+			display: none;
+		}
 	}
 </style>
 
 <div id="filter-bar">
-	<div id="carouselExample" class="carousel slide">
-		<div class="carousel-inner">
-			<div class="carousel-item active">
-				<div class="filter-contain">
-					<div class="filter">
-						<div>
-							<i class="fa-solid fa-fire"></i>
-						</div>
-						<p>Trending</p>
-					</div>
-
-					<div class="filter">
-						<div>
-							<i class="fa-solid fa-bed"></i>
-						</div>
-						<p>Rooms</p>
-					</div>
-
-					<div class="filter">
-						<div>
-							<i class="fa-solid fa-mountain-city"></i>
-						</div>
-						<p>Iconic Cities</p>
-					</div>
-
-					<div class="filter">
-						<div>
-							<i class="fa-solid fa-mountain"></i>
-						</div>
-						<p>Mountains</p>
-					</div>
-
-					<div class="filter">
-						<div>
-							<i class="fa-solid fa-person-swimming"></i>
-						</div>
-						<p>Castles</p>
-					</div>
-
-					<div class="filter">
-						<div>
-							<i class="fa-solid fa-fire"></i>
-						</div>
-						<p>Amazing Pools</p>
-					</div>
-
-					<div class="filter">
-						<div>
-							<i class="fa-solid fa-campground"></i>
-						</div>
-						<p>Camping</p>
-					</div>
-					<div class="filter">
-						<div>
-							<i class="fa-solid fa-cow"></i>
-						</div>
-						<p>Farms</p>
-					</div>
-				</div>
+	<button id="slideLeft" class="slide-btn">
+		<i class="fa-solid fa-angle-left arrows"></i>
+	</button>
+	<div id="filter-container">
+		<div class="filter-option">
+			<div>
+				<i class="fa-solid fa-fire"></i>
 			</div>
-			<div class="carousel-item">
-				<div class="filter-contain">
-					<div class="filter">
-						<div>
-							<i class="fa-solid fa-snowflake"></i>
-						</div>
-						<p>Arctic</p>
-					</div>
+			<p>Trending</p>
+		</div>
 
-					<div class="filter">
-						<div>
-							<i class="fa-solid fa-igloo"></i>
-						</div>
-						<p>Domes</p>
-					</div>
+		<div class="filter-option">
+			<div>
+				<i class="fa-solid fa-bed"></i>
+			</div>
+			<p>Rooms</p>
+		</div>
 
-					<div class="filter">
-						<div>
-							<i class="fa-solid fa-ship"></i>
-						</div>
-						<p>Boats</p>
-					</div>
-				</div>
+		<div class="filter-option">
+			<div>
+				<i class="fa-solid fa-tree-city"></i>
+			</div>
+			<p>Iconic Cities</p>
+		</div>
+
+		<div class="filter-option">
+			<div>
+				<i class="fa-solid fa-mountain"></i>
+			</div>
+			<p>Mountains</p>
+		</div>
+
+		<div class="filter-option">
+			<div>
+				<i class="fa-solid fa-person-swimming"></i>
+			</div>
+			<p>Amazing Pools</p>
+		</div>
+
+		<div class="filter-option">
+			<div>
+				<i class="fa-solid fa-umbrella-beach"></i>
+			</div>
+			<p>Beach</p>
+		</div>
+
+		<div class="filter-option">
+			<div>
+				<i class="fa-solid fa-campground"></i>
+			</div>
+			<p>Camping</p>
+		</div>
+
+		<div class="filter-option">
+			<div>
+				<i class="fa-solid fa-cow"></i>
+			</div>
+			<p>Farms</p>
+		</div>
+
+		<div class="filter-option">
+			<div>
+				<i class="fa-solid fa-snowflake"></i>
+			</div>
+			<p>Arctic</p>
+		</div>
+
+		<div class="filter-option">
+			<div>
+				<i class="fa-solid fa-person-skiing"></i>
+			</div>
+			<p>Skiing</p>
+		</div>
+
+		<div class="filter-option">
+			<div>
+				<i class="fa-solid fa-golf-ball-tee"></i>
+			</div>
+			<p>Golfing</p>
+		</div>
+
+		<div class="filter-option">
+			<div>
+				<i class="fa-solid fa-city"></i>
+			</div>
+			<p>Top Cities</p>
+		</div>
+
+		<div class="filter-option">
+			<div>
+				<i class="fa-brands fa-fort-awesome"></i>
+				<p>Castles</p>
 			</div>
 		</div>
-		<button
-			class="carousel-control-prev slider-btn"
-			type="button"
-			data-bs-target="#carouselExample"
-			data-bs-slide="prev"
-		>
-			<span class="carousel-control-prev-icon prev" aria-hidden="true"></span>
-			<span class="visually-hidden">Previous</span>
-		</button>
-		<button
-			class="carousel-control-next slider-btn"
-			type="button"
-			data-bs-target="#carouselExample"
-			data-bs-slide="next"
-		>
-			<span class="carousel-control-next-icon next" aria-hidden="true"></span>
-			<span class="visually-hidden">Next</span>
-		</button>
-	</div>
 
-	<div id="filters">
-		<i class="fa-solid fa-filter"></i>
-		&nbsp; Filters
-	</div>
+		<div class="filter-option">
+			<div>
+				<i class="fa-solid fa-monument"></i>
+				<p>Historic Homes</p>
+			</div>
+		</div>
 
-	<div class="tax-toggle">
-		<div class="form-check-reverse form-switch">
-			<input
-				class="form-check-input"
-				type="checkbox"
-				role="switch"
-				id="flexSwitchCheckDefault"
-			/>
-			<label class="form-check-label" for="flexSwitchCheckDefault"
-				>Display total after taxes</label
-			>
+		<div class="filter-option">
+			<div>
+				<i class="fa-solid fa-igloo"></i>
+			</div>
+			<p>Domes</p>
+		</div>
+
+		<div class="filter-option">
+			<div>
+				<i class="fa-solid fa-ship"></i>
+			</div>
+			<p>Boats</p>
+		</div>
+	</div>
+	<button id="slideRight" class="slide-btn">
+		<i class="fa-solid fa-angle-right arrows"></i>
+	</button>
+
+	<div id="btn-contain">
+		<div id="filter-btn">
+			<i class="fa-solid fa-filter"></i>
+			&nbsp; Filters
+		</div>
+
+		<div class="tax-toggle">
+			<div class="form-check-reverse form-switch">
+				<input
+					class="form-check-input"
+					type="checkbox"
+					role="switch"
+					id="flexSwitchCheckDefault"
+				/>
+				<label class="form-check-label" for="flexSwitchCheckDefault"
+					>Display total after taxes</label
+				>
+			</div>
 		</div>
 	</div>
 </div>
