@@ -1,4 +1,4 @@
-**Wanderlust**
+## Wanderlust
 
 Wanderlust is a web application inspired by Airbnb, built using a combination of frontend and backend technologies:
 
@@ -36,7 +36,7 @@ Wanderlust is a web application inspired by Airbnb, built using a combination of
    npm start
    ```
 
-   This will typically start the server on port 3000 (you can check the code for specific port configuration).
+   This will typically start the server on port 8080.
 
 3. Access the application in your browser:
 
@@ -46,7 +46,7 @@ Wanderlust is a web application inspired by Airbnb, built using a combination of
 
 **Live Project**
 
-You can view the deployed version of the project here: https://wanderlust-a7i8.onrender.com/listings
+You can view the deployed version of the project [here.](https://wanderlust-a7i8.onrender.com/listings)
 
 **Project Structure**
 
