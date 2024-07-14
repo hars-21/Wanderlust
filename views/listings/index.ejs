@@ -295,3 +295,16 @@
 		});
 	});
 </script>
+
+<script>
+	// Filter scroll buttons
+	const slideRight = document.getElementById("slideRight");
+	const slideLeft = document.getElementById("slideLeft");
+
+	slideRight.onclick = function () {
+		document.getElementById("filter-container").scrollLeft += 200;
+	};
+	slideLeft.onclick = function () {
+		document.getElementById("filter-container").scrollLeft -= 200;
+	};
+</script>

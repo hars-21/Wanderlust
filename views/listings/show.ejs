@@ -1,4 +1,8 @@
 <% layout('/layouts/boilerplate.ejs') %>
+<script>
+	let mapToken = "<%=process.env.MAP_TOKEN %>";
+	const listing = <%- JSON.stringify(listing) %>
+</script>
 
 <style>
 	@media screen and (max-width: 768px) {
@@ -62,7 +66,7 @@
 	</div>
 	<% } %>
 
-	<div class="col-8 offset-3 mb-3">
+	<div class="col-6 offset-3 mb-3">
 		<% if (currUser ){ %>
 		<hr />
 		<h4>Leave a Review</h4>
@@ -166,4 +170,10 @@
 		</div>
 		<% } %>
 	</div>
+	<div class="col-6 offset-3 mb-3">
+		<h3 class="mb-3">Where you'll be</h3>
+		<div id="map"></div>
+	</div>
 </div>
+
+<script src="/js/map.js"></script>
